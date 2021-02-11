@@ -1,65 +1,51 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="bg-black">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>PeteChu</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <section className="container">
+        <div className="introduce flex flex-col">
+          <p className="my-1">Hi, i'am</p>
+          <p className="my-1 alias-name">PeteChu</p>
+          <p className="my-1">i'm a Full Stack Developer</p>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <div className="learn-more flex flex-col items-center">
+          <p className="text-white text-3xl font-semibold">
+            Learn more about me
+          </p>
+          <FontAwesomeIcon
+            className="text-white text-4xl text-thin mt-5"
+            icon={faArrowDown}
+          />
+        </div>
+      </section>
+
+      <section className="container">
+        <div className="my-3">
+          <div className="text-white" id="about-me-1">
+            Occaecat eu mollit labore est sunt pariatur labore fugiat est
+            deserunt quis. Adipisicing aute veniam aliqua amet ullamco aliquip
+            enim incididunt dolore. Cupidatat nulla nostrud voluptate et sit
+            sunt incididunt enim ex labore aliquip. Lorem ipsum reprehenderit
+            excepteur nulla voluptate culpa ut reprehenderit.
+          </div>
+        </div>
+      </section>
+
+      <div className="jump-to-top flex flex-col items-center cursor-pointer">
+        <FontAwesomeIcon
+          className="text-white text-1xl mt-5"
+          icon={faArrowUp}
+        />
+        <p className="text-white text-md font-semibold">Jump to top</p>
+      </div>
     </div>
-  )
+  );
 }

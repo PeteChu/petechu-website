@@ -1,9 +1,18 @@
+/* ./styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
-body {
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 a {
@@ -14,3 +23,42 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: scroll;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduce p {
+  @apply text-center;
+  @apply text-white;
+  @apply text-5xl;
+  @apply font-bold;
+  @apply font-sans;
+}
+
+.introduce .alias-name {
+  @apply bg-gradient-to-r;
+  @apply from-white;
+  @apply via-purple-600;
+  @apply to-green-400;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.jump-to-top {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+/* .jump-to-top:hover {
+} */
