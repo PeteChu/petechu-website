@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 export default function Home() {
   return (
@@ -23,6 +26,7 @@ export default function Home() {
           <FontAwesomeIcon
             className="text-white text-4xl text-thin mt-5"
             icon={faArrowDown}
+            width="0"
           />
         </div>
       </section>
@@ -43,6 +47,7 @@ export default function Home() {
         <FontAwesomeIcon
           className="text-white text-1xl mt-5"
           icon={faArrowUp}
+          width="0"
         />
         <p className="text-white text-md font-semibold">Jump to top</p>
       </div>
