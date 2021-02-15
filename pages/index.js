@@ -11,7 +11,6 @@ export default function Home() {
       <Head>
         <title>PeteChu</title>
       </Head>
-
       <section className="container">
         <div className="introduce flex flex-col">
           <p className="my-1">Hi, i'am</p>
