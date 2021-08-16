@@ -6,8 +6,12 @@
 
 div#__next {
   --bg-color: black;
-  --typewriterSpeed: 5s;
+  --typewriterSpeed: 6s;
   --typewriterCharacters: 28;
+
+  --typewriterMobileSpeed: 6s;
+  --typewriterMobileHelloCharacters: 17;
+  --typewriterMobileNameCharacters: 10;
 }
 
 html,
@@ -47,26 +51,62 @@ a {
 }
 
 p.introduce-name::before,
-p.introduce-name::after {
+p.introduce-name::after,
+p.introduce-mobile-hello::before,
+p.introduce-mobile-hello::after,
+p.introduce-mobile-name::before,
+p.introduce-mobile-name::after {
   content: '';
   position: absolute;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
 }
 
 p.introduce-name::before {
   background: var(--bg-color);
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
 }
 
 p.introduce-name::after {
   width: 0.125em;
-    background: var(--bg-color);
-  animation: 
-    typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+p.introduce-mobile-hello::before {
+  background: black;
+  animation: typewriter var(--typewriterMobileSpeed)
+    steps(var(--typewriterMobileHelloCharacters)) 1s forwards;
+}
+
+p.introduce-mobile-hello::after {
+  width: 0.125em;
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterMobileSpeed)
+      steps(var(--typewriterMobileHelloCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterMobileHelloCharacters)) infinite,
+    stopblink 0s steps(var(--typewriterMobileHelloCharacters))
+      calc(var(--typewriterMobileSpeed) + 1s) forwards;
+}
+
+p.introduce-mobile-name::before {
+  background: black;
+  animation: typewriter 4s steps(var(--typewriterMobileNameCharacters))
+    calc(var(--typewriterMobileSpeed) + 1s) forwards;
+}
+
+p.introduce-mobile-name::after {
+  width: 0.125em;
+  background: var(--bg-color);
+  animation: typewriter 4s steps(var(--typewriterMobileNameCharacters))
+      calc(var(--typewriterMobileSpeed) + 1s) forwards,
+    blink 750ms steps(var(--typewriterMobileNameCharacters))
+      calc(var(--typewriterMobileSpeed) + 1s) infinite;
 }
 
 @keyframes typewriter {
@@ -78,5 +118,11 @@ p.introduce-name::after {
 @keyframes blink {
   to {
     background: white;
+  }
+}
+
+@keyframes stopblink {
+  to {
+    background: transparent;
   }
 }
