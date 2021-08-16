@@ -40,7 +40,7 @@ a {
 
 .introduce p {
   @apply text-center text-white font-bold;
-  font-size: clamp(1rem, 1vw + 2rem, 2.5rem);
+  font-size: clamp(1rem, 1vw + 1.5rem, 2.5rem);
 }
 
 .introduce .alias-name {
