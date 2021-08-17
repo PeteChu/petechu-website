@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "./components/Home.module.scss";
 
 export default function Home() {
     return (
@@ -25,7 +26,18 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                {/* <p className="introduce-position pt-8 text-white">I'm a Full Stack Developer.</p> */}
+                <div className="welcome-message">
+                    <div className={styles.WelcomeButton}>
+                        <p className={styles.WelcomeText}>
+                            Welcome to my site!
+                        </p>
+                    </div>
+                    <div className={styles.WelcomeButtonMobile}>
+                        <p className={styles.WelcomeText}>
+                            Welcome to my site!
+                        </p>
+                    </div>
+                </div>
             </section>
         </div>
     );
