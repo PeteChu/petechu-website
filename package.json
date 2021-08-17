@@ -20,6 +20,7 @@
     "devDependencies": {
         "autoprefixer": "^10.3.1",
         "postcss": "^8.3.6",
+        "stylelint-config-standard": "^22.0.0",
         "tailwindcss": "^2.2.7"
     }
 }
