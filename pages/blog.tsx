@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const posts = await res.json();
     return {
         props: {
-            posts: posts,
+            posts,
         },
     };
 };
