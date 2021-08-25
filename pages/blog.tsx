@@ -1,9 +1,13 @@
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 
 function Blog({ posts }) {
     return (
         <div className="flex flex-wrap bg-gray-100 justify-around">
+            <Head>
+                <title>Blog</title>
+            </Head>
             {posts.map((post) => {
                 return (
                     <div
@@ -34,6 +38,7 @@ function Blog({ posts }) {
                                     src={post.cover_image}
                                     layout="fill"
                                     objectFit="cover"
+                                    alt="article image cover"
                                 ></Image>
                             </div>
                         )}
