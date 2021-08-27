@@ -37,7 +37,7 @@ function Blog({ posts }) {
                         {post.cover_image && (
                             <div className="relative mt-4 h-44 md:h-60">
                                 <Image
-                                    className={`cover-image rounded-b-xl`}
+                                    className={"cover-image rounded-b-xl"}
                                     src={post.cover_image}
                                     layout="fill"
                                     objectFit="cover"
