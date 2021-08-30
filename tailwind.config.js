@@ -9,6 +9,9 @@ module.exports = {
             fontFamily: {
                 "source-code-pro": ['"Source Code Pro"'],
             },
+            height: {
+                "fit-content": "fit-content",
+            },
         },
     },
     variants: {
