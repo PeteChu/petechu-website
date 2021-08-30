@@ -8,7 +8,7 @@ function Blog({ posts }) {
             <Head>
                 <title>Blog</title>
             </Head>
-            {posts.map((post) => {
+            {posts.map((post, index) => {
                 return (
                     <div
                         className="flex flex-col w-3/4 md:w-2/3 my-4 bg-gray-100 rounded-xl cursor-pointer"
@@ -27,8 +27,9 @@ function Blog({ posts }) {
                                         <a
                                             className="tag mx-1 text-gray-600 hover:text-black text-sm border border-blue-100 hover:border-blue-300 bg-blue-100 bg-opacity-50 rounded text-center m-0.5 p-1 cursor-pointer"
                                             href="#"
+                                            key={`${index}-${tag}`}
                                         >
-                                            #{tag}
+                                            {`#${tag}`}
                                         </a>
                                     );
                                 })}
