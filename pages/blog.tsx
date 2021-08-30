@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-function Blog({ posts }) {
+function Blog({ posts = [] }) {
     return (
         <div className="bg-black flex flex-wrap justify-around">
             <Head>
@@ -11,13 +11,16 @@ function Blog({ posts }) {
             {posts.map((post, index) => {
                 return (
                     <div
-                        className="flex flex-col w-3/4 md:w-2/3 my-4 bg-gray-100 rounded-xl cursor-pointer"
+                        className="flex flex-col h-fit-content w-3/4 md:w-2/3 my-4 bg-gray-100 rounded-xl cursor-pointer"
                         key={post.id}
                     >
                         <div className="flex-grow my-2 pt-2 px-4">
                             <p className="text-xl font-semibold hover:text-blue-800 hover:text-opacity-90">
                                 {post.title}
                             </p>
+                            <small className="font-light">
+                                {post.published_at}
+                            </small>
                             <p className="mt-2 font-light">
                                 {post.description}
                             </p>
@@ -38,7 +41,7 @@ function Blog({ posts }) {
                         {post.cover_image && (
                             <div className="relative mt-4 h-44 md:h-60">
                                 <Image
-                                    className={`cover-image rounded-b-xl`}
+                                    className="cover-image rounded-b-xl"
                                     src={post.cover_image}
                                     layout="fill"
                                     objectFit="cover"
@@ -54,8 +57,13 @@ function Blog({ posts }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const res = await fetch("https://dev.to/api/articles");
-    const posts = await res.json();
+    const headers = {
+        "api-key": process.env.DEV_TO_API_TOKEN,
+    };
+    const res = await fetch(process.env.DEV_TO_API_URL, {
+        headers,
+    });
+    const posts = res.status !== 200 ? [] : await res.json();
     return {
         props: {
             posts,
