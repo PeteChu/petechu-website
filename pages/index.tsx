@@ -8,7 +8,7 @@ export default function Home() {
     const [clickable, setClickable] = useState(false);
 
     setTimeout(() => {
-        setClickable(true);
+        setClickable(false);
     }, 8000);
 
     return (
@@ -29,7 +29,7 @@ export default function Home() {
                     setTimeout(() => {
                         const el = document.querySelector(".translateUp");
                         el.addEventListener("animationend", () => {
-                            router.push("/blog");
+                            router.push("/playground");
                         });
                     }, 100);
                 }}
