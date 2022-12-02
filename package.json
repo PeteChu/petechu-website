@@ -11,6 +11,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.34",
         "@fortawesome/free-solid-svg-icons": "^5.15.2",
         "@fortawesome/react-fontawesome": "^0.1.14",
+        "@vercel/analytics": "^0.1.5",
         "eslint-config-next": "^13.0.6",
         "next": "^13.0.6",
         "postcss-import": "^14.0.2",
